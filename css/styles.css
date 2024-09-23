@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("https://th.bing.com/th/id/R.c7ab326e5040fa89c0b92e3e668c50f9?rik=%2bboQ55mqOwoOnA&riu=http%3a%2f%2fi.huffpost.com%2fgen%2f4393678%2fimages%2fo-THE-MATRIX-facebook.jpg&ehk=9Vv15kaJW%2bpiUiJ9jGjuFp2%2fnRIE%2f19XDqaMuEVHMN8%3d&risl=&pid=ImgRaw&r=0");
+}
+
+#calculadora{
+    background-color: rgb(95, 95, 95);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 30px 0 30px;
+    border-radius: 10px;
+    box-shadow: 15px 15px 0px rgb(68, 68, 68);
+}
+#calculadora::after{ /* Efecto tridimensional */
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background-color: rgb(68, 68, 68);
+    transform: rotate(45deg);
+    margin-left:-29px ;
+    margin-top: -2px;
+    z-index: -1; /* queda por detrás */
+
+}
+
+#calculadora::before{ /* Efecto tridimensional */
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background-color: rgb(68, 68, 68);
+    transform: rotate(45deg);
+    margin-left:458px ;
+    margin-top: -22px;
+    z-index: -1; /* queda por detrás */
+
+}
+
+/* operandos */
+
+#calculadora >.operands{
+    width: 100%;  /* ocupa la pantalla */
+    padding: 20px;
+    text-align: right;
+    background-color: beige;
+    margin-bottom: 20px; /* botones separados */
+    border-radius: 10px;
+    font-size: 70px;
+
+}
+
+#calculadora >.operands>[data-operand-1]{
+    font-size: 40px;
+}
+
+
+/* botones */
+
+#calculadora> .btn-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /* con grid disponerlos en 4 columnas */
+    gap: 10px  ;
+    padding-bottom: 10px;
+}
+
+#calculadora> .btn-grid>button{
+  padding: 10px;
+  background-color: azure;
+  font-weight: bold;
+  border-radius: 10px;
+  border-width: 5px;
+  border-color: azure;
+  font-size: 25px;
+}
+
+#calculadora>.btn-grid>button:nth-child(2){    /* ocupar 2 espacios */
+    grid-column: span 2; 
+}
+
+#calculadora>.btn-grid>button:nth-child(18){  /* ocupar 2 espacios */
+    grid-column: span 2; 
+    background-color: rgb(255, 153, 0);
+    border-color: rgb(255, 153, 0);
+}
